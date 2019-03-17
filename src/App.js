@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from 'components/theme/DeepCast/global';
+import DeepCastTheme from 'components/theme/DeepCast';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from 'pages/home';
 import About from 'pages/about';
@@ -8,18 +11,21 @@ import Contact from 'pages/contact';
 class App extends Component {
   render() {
     return (
-      <Router>
-        <React.Fragment>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/product" component={Product} />
-            <Route exact path="/contact" component={Contact} />
+      <ThemeProvider theme={DeepCastTheme}>
+        <Router>
+          <React.Fragment>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/product" component={Product} />
+              <Route exact path="/contact" component={Contact} />
 
-            {/* <Route component={NotFound404} /> */}
-          </Switch>
-        </React.Fragment>
-      </Router>
+              {/* <Route component={NotFound404} /> */}
+            </Switch>
+            <GlobalStyle />
+          </React.Fragment>
+        </Router>
+      </ThemeProvider>
     );
   }
 }
