@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   html,body {
+    background-color: gray;
    
   }  
   html {
@@ -34,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #app {
-    // background-color: white;
+    // background-color: gray;
   }
 
   p,

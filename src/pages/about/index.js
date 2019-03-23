@@ -1,6 +1,5 @@
 import React from 'react';
 import { Layout } from 'components/layout';
-import { H1 } from 'components/general';
 
 class About extends React.Component {
   render() {
@@ -11,7 +10,7 @@ class About extends React.Component {
       >
         {/* TOP HERO SECTION */}
 
-        <H1 danger>About Page</H1>
+        <h1>About Page</h1>
       </Layout>
     );
   }
