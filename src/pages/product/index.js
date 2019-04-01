@@ -10,7 +10,7 @@ class Product extends React.Component {
       >
         {/* TOP HERO SECTION */}
 
-        <h1 light>Product Page</h1>
+        <h1>Product Page</h1>
       </Layout>
     );
   }

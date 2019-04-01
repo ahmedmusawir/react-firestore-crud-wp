@@ -10,7 +10,7 @@ class Contact extends React.Component {
       >
         {/* TOP HERO SECTION */}
 
-        <h1 light>Contact Page</h1>
+        <h1>Contact Page</h1>
       </Layout>
     );
   }

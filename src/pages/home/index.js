@@ -11,6 +11,8 @@ import {
 import DataAddForm from 'components/custom/DataAddFrom';
 
 class Home extends React.Component {
+  _isMounted = false;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +22,13 @@ class Home extends React.Component {
     this.ref = db.collection('dishes');
   }
 
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
   componentDidMount() {
+    this._isMounted = true;
+
     let data = [];
 
     db.collection('dishes').onSnapshot(res => {
@@ -43,7 +51,9 @@ class Home extends React.Component {
         }
       });
 
-      this.setState({ data });
+      if (this._isMounted) {
+        this.setState({ data });
+      }
     });
   }
 
@@ -60,9 +70,9 @@ class Home extends React.Component {
       });
   };
 
-  update = id => {
-    console.log(id);
-  };
+  // update = id => {
+  //   console.log(id);
+  // };
 
   render() {
     let list = this.state.data.map(dish => {
